@@ -38,33 +38,22 @@ allure open reports/allure-report
 
 ##############
 
-# Создать новую ветку и перейти в неё
-git checkout -b feature/my-new-feature
-
-# Посмотреть текущие ветки
-git branch
-
-# Добавить файлы в индекс
+git checkout -b feature/my-task
+# Работаешь, коммитишь изменения:
 git add .
+git commit -m "feat: реализовал фичу Х"
+git push origin feature/my-task
 
-# Сделать коммит
-git commit -m "описание изменений"
-
-# Переключиться на другую ветку
+#пулл реквест на гитхабе + мердж
+#либо 
 git checkout main
+git pull origin main
+git merge feature/my-task
+git push origin main
 
-# Запушить ветку на сервер
-git push origin feature/my-new-feature
-
-# Обновить main перед мерджем
+#Синхронизируешь свой локальный main
 git checkout main
 git pull origin main
 
-# Влить ветку в main (merge)
-git merge feature/my-new-feature
-
-# Удалить ветку локально и на сервере
-git branch -d feature/my-new-feature
-git push origin --delete feature/my-new-feature
-
-# Сделать pull request (PR) – через интерфейс GitHub
+#Удаляешь свою локальную ветку
+git branch -d feature/my-task
