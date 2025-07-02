@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04   # Обязательно 22.04, чтобы не было проблем с deps
 
     steps:
       - name: Checkout repo
@@ -27,7 +27,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Install Playwright Browsers
-        uses: microsoft/playwright-github-action@v1
+        run: |
+          source venv/bin/activate
+          playwright install --with-deps
 
       - name: Run tests
         run: |
