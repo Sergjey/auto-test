@@ -1,0 +1,1 @@
+"""Пакет с Page Object Model классами"""
